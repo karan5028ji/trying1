@@ -1,0 +1,44 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9e9e9;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: #e44d26;
+    color: #fff;
+    padding: 20px 0;
+}
+menu w-full lg:block flex-grow lg:flex lg:items-center lg:w-auto lg:px-3 px-8 {
+    text-align: right;
+}
+
+h1 {
+    margin: 0;
+}
+
+.heading {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.timeline {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: left ;
+}
+
+footer {
+    margin-top: 20px;
+    color: #777;
+}
