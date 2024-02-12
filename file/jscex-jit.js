@@ -127,15 +127,15 @@
                 return null;
             },
 
-            _visitStatements: function (statements, stmts, index) {
-                if (arguments.length <= 2) index = 0;
+            _visitStatements: function (statements, stmts, index1) {
+                if (arguments.length <= 2) index1 = 0;
 
-                if (index >= statements.length) {
+                if (index1 >= statements.length) {
                     stmts.push({ type: "normal" });
                     return this;
                 }
 
-                var currStmt = statements[index];
+                var currStmt = statements[index1];
                 var bindInfo = this._getBindInfo(currStmt);
 
                 if (bindInfo) {
@@ -144,7 +144,7 @@
 
                     if (bindInfo.assignee != "return") {
                         bindStmt.stmts = [];
-                        this._visitStatements(statements, bindStmt.stmts, index + 1);
+                        this._visitStatements(statements, bindStmt.stmts, index1 + 1);
                     }
 
                 } else {
@@ -160,9 +160,9 @@
 
                         if (newStmt.type == "raw") {
                             stmts.push(newStmt);
-                            this._visitStatements(statements, stmts, index + 1);
+                            this._visitStatements(statements, stmts, index1 + 1);
                         } else {
-                            var isLast = (index == statements.length - 1);
+                            var isLast = (index1 == statements.length - 1);
                             if (isLast) {
                                 stmts.push(newStmt);
                             } else {
@@ -174,7 +174,7 @@
                                 };
                                 stmts.push(combineStmt);
 
-                                this._visitStatements(statements, combineStmt.second.stmts, index + 1);
+                                this._visitStatements(statements, combineStmt.second.stmts, index1 + 1);
                             }
                         }
 
@@ -182,7 +182,7 @@
 
                         stmts.push({ type: "raw", stmt: currStmt });
 
-                        this._visitStatements(statements, stmts, index + 1);
+                        this._visitStatements(statements, stmts, index1 + 1);
                     }
                 }
 
@@ -227,10 +227,10 @@
                 return false;
             },
 
-            _collectCaseStatements: function (cases, index) {
+            _collectCaseStatements: function (cases, index1) {
                 var res = [];
 
-                for (var i = index; i < cases.length; i++) {
+                for (var i = index1; i < cases.length; i++) {
                     var rawStmts = cases[i][1];
                     for (var j = 0; j < rawStmts.length; j++) {
                         if (rawStmts[j][0] == "break") {
@@ -315,16 +315,16 @@
                     delayStmt.stmts.push({ type : "raw", stmt: keysAst});
                     */
                     
-                    // var index = 0;
+                    // var index1 = 0;
                     delayStmt.stmts.push({
                         type: "raw",
                         stmt: root.parse("var " + indexVar + " = 0;")[1][0]
                     });
 
-                    // index < members.length
+                    // index1 < members.length
                     var condition = root.parse(indexVar + " < " + keysVar + ".length")[1][0][1];
 
-                    // index++
+                    // index1++
                     var update = root.parse(indexVar + "++")[1][0][1];
 
                     var loopStmt = {
@@ -919,16 +919,16 @@
                 },
 
                 "sub": function (ast) {
-                    var prop = ast[1], index = ast[2];
+                    var prop = ast[1], index1 = ast[2];
 
                     function needBracket() {
                         return !(prop[0] == "name")
                     }
 
                     if (needBracket()) {
-                        this._write("(")._visitRaw(prop)._write(")[")._visitRaw(index)._write("]");
+                        this._write("(")._visitRaw(prop)._write(")[")._visitRaw(index1)._write("]");
                     } else {
-                        this._visitRaw(prop)._write("[")._visitRaw(index)._write("]");
+                        this._visitRaw(prop)._write("[")._visitRaw(index1)._write("]");
                     }
                 },
 

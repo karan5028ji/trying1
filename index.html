@@ -1,276 +1,78 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Web Page Title</title>	    
-    <link type="text/css" rel="stylesheet" href="./file/default.css">
-    <script type="text/javascript" src="./file/jquery.min.js"></script>
-    <script type="text/javascript" src="./file/jscex.min.js"></script>
-    <script type="text/javascript" src="./file/jscex-parser.js"></script>
-    <script type="text/javascript" src="./file/jscex-jit.js"></script>
-    <script type="text/javascript" src="./file/jscex-builderbase.min.js"></script>
-    <script type="text/javascript" src="./file/jscex-async.min.js"></script>
-    <script type="text/javascript" src="./file/jscex-async-powerpack.min.js"></script>
-    <script type="text/javascript" src="./file/functions.js" charset="utf-8"></script>
-    <script type="text/javascript" src="./file/love.js" charset="utf-8"></script>
-    <style type="text/css">
-    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://unpkg.com/tailwindcss@1.2.0/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Your Website</title>
 </head>
 <body>
-    <div id="main">
-        <div id="error">This page is created using HTML5, and your current browser may not display it correctly. Please switch to Google (<a href="http://www.google.cn/chrome/intl/zh-CN/landing_chrome.html?hl=zh-CN&brand=CHMI">Chrome</a>) or Firefox (<a href="http://firefox.com.cn/download/">Firefox</a>), or use the latest version of other browsers.</div>
-        <!-- <audio autoplay="autoplay" height="100" width="100"> -->
-        <!-- <source src="renxi.mp3" type="audio/mp3" /> -->
-        <!-- <embed height="100" width="100" src="renxi.mp3" /> -->
-        <!-- </audio> -->
-        <div id="wrap">
-            <div id="text">
-                <div id="code">
-                    <font color="#FF0000">
-                        <span class="say">Nickname</span><br>
-                        <span class="say">First line</span><br>
-                        <span class="say">Heartless placeholder</span><br>
-                        <span class="say">Heartless placeholder</span><br>
-                        <span class="say">Heartless placeholder</span><br>
-                        <span class="say">Heartless placeholder</span><br>
-                        <span class="say">Heartless placeholder</span><br>
-                        <span class="say">Heartless placeholder</span><br>
-                        <span class="say">Heartless placeholder</span><br>
-                        <span class="say">Heartless placeholder</span><br>
-                        <span class="say">Heartless placeholder</span><br>
-                        <span class="say">Last line</span><br>
-                        <span class="say"><span class="space"></span>--Signature</span>
-                    </font>
-                    <br />
-                    <br />
-                </div>
+    <nav
+        class="flex items-center justify-between flex-wrap bg-white py-4 lg:px-12 shadow border-solid border-t-2 border-blue-700">
+        <div class="flex justify-between lg:w-auto w-full lg:border-b-0 pl-6 pr-2 border-solid border-b-2 border-gray-300 pb-5 lg:pb-0">
+            <div class="flex items-center flex-shrink-0 text-gray-800 mr-16">
+                <span class="font-semibold text-xl tracking-tight">OUR LOVE STORY ❤️</span>
             </div>
-            <div id="clock-box">
-                <span class="STYLE1"></span>
-                <font color="#33CC00">Dear, I like you</font>
-                <span class="STYLE1">It's already...</span>
-                <div id="clock"></div>
+            <div class="block lg:hidden ">
+                <button
+                    id="nav"
+                    class="flex items-center px-3 py-2 border-2 rounded text-blue-700 border-blue-700 hover:text-blue-700 hover:border-blue-700">
+                    <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title>
+                        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+                    </svg>
+                </button>
             </div>
-            <canvas id="canvas" width="1100" height="680"></canvas>
-    </div>
-
-    <script>
-    (function(){
-        var canvas = $('#canvas');
-
-        if (!canvas[0].getContext) {
-            $("#error").show();
-            return false;
-        }
-
-        var width = canvas.width();
-        var height = canvas.height();        
-        canvas.attr("width", width);
-        canvas.attr("height", height);
-        var opts = {
-            seed: {
-                x: width / 2 - 20,
-                color: "rgb(190, 26, 37)",
-                scale: 2
-            },
-            branch: [
-                [535, 680, 570, 250, 500, 200, 30, 100, [
-                    [540, 500, 455, 417, 340, 400, 13, 100, [
-                        [450, 435, 434, 430, 394, 395, 2, 40]
-                    ]],
-                    [550, 445, 600, 356, 680, 345, 12, 100, [
-                        [578, 400, 648, 409, 661, 426, 3, 80]
-                    ]],
-                    [539, 281, 537, 248, 534, 217, 3, 40],
-                    [546, 397, 413, 247, 328, 244, 9, 80, [
-                        [427, 286, 383, 253, 371, 205, 2, 40],
-                        [498, 345, 435, 315, 395, 330, 4, 60]
-                    ]],
-                    [546, 357, 608, 252, 678, 221, 6, 100, [
-                        [590, 293, 646, 277, 648, 271, 2, 80]
-                    ]]
-                ]] 
-            ],
-            bloom: {
-                num: 700,
-                width: 1080,
-                height: 650,
-            },
-            footer: {
-                width: 1200,
-                height: 5,
-                speed: 10,
-            }
-        }
-
-        var tree = new Tree(canvas[0], width, height, opts);
-        var seed = tree.seed;
-        var foot = tree.footer;
-        var hold = 1;
-
-        canvas.click(function(e) {
-            var offset = canvas.offset(), x, y;
-            x = e.pageX - offset.left;
-            y = e.pageY - offset.top;
-            if (seed.hover(x, y)) {
-                hold = 0; 
-                canvas.unbind("click");
-                canvas.unbind("mousemove");
-                canvas.removeClass('hand');
-            }
-        }).mousemove(function(e){
-            var offset = canvas.offset(), x, y;
-            x = e.pageX - offset.left;
-            y = e.pageY - offset.top;
-            canvas.toggleClass('hand', seed.hover(x, y));
-        });
-
-        var seedAnimate = eval(Jscex.compile("async", function () {
-            seed.draw();
-            while (hold) {
-                $await(Jscex.Async.sleep(10));
-            }
-            while (seed.canScale()) {
-                seed.scale(0.95);
-                $await(Jscex.Async.sleep(10));
-            }
-            while (seed.canMove()) {
-                seed.move(0, 2);
-                foot.draw();
-                $await(Jscex.Async.sleep(10));
-            }
-        }));
-
-        var growAnimate = eval(Jscex.compile("async", function () {
-            do {
-                tree.grow();
-                $await(Jscex.Async.sleep(10));
-            } while (tree.canGrow());
-        }));
-
-        var flowAnimate = eval(Jscex.compile("async", function () {
-            do {
-                tree.flower(2);
-                $await(Jscex.Async.sleep(10));
-            } while (tree.canFlower());
-        }));
-
-        var moveAnimate = eval(Jscex.compile("async", function () {
-            tree.snapshot("p1", 240, 0, 610, 680);
-            while (tree.move("p1", 500, 0)) {
-                foot.draw();
-                $await(Jscex.Async.sleep(10));
-            }
-            foot.draw();
-            tree.snapshot("p2", 500, 0, 610, 680);
-
-            // There might be a flicker, not happy with this, (＞﹏＜)
-            canvas.parent().css("background", "url(" + tree.toDataURL('image/png') + ")");
-            canvas.css("background", "#ffe");
-            $await(Jscex.Async.sleep(300));
-            canvas.css("background", "none");
-        }));
-
-        var jumpAnimate = eval(Jscex.compile("async", function () {
-            var ctx = tree.ctx;
-            while (true) {
-                tree.ctx.clearRect(0, 0, width, height);
-                tree.jump();
-                foot.draw();
-                $await(Jscex.Async.sleep(25));
-            }
-        }));
-
-        var textAnimate = eval(Jscex.compile("async", function () {
-            var together = new Date();
-            together.setFullYear(2021, 12, 22);  // Set the date (Year, Month, Day)
-            together.setHours(20);              // Set the hours
-            together.setMinutes(0);             // Set the minutes
-            together.setSeconds(0);             // Set the seconds (first digit)
-            together.setMilliseconds(2);        // Set the seconds (second digit)
-
-            $("#code").show().typewriter();
-            $("#clock-box").fadeIn(500);
-            while (true) {
-                timeElapse(together);
-                $await(Jscex.Async.sleep(1000));
-            }
-        }));
-
-        var runAsync = eval(Jscex.compile("async", function () {
-            $await(seedAnimate());
-            $await(growAnimate());
-            $await(flowAnimate());
-            $await(moveAnimate());
-
-            textAnimate().start();
-
-            $await(jumpAnimate());
-        }));
-
-        runAsync().start();
-    })();
-    </script>
+        </div>
     
-<style type="text/css">
-    body {
-        margin: 0;
-        padding: 0;
-    }
-
-    #main {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 101vh;
-        background: #f2f2f2;
-    }
-
-    #error {
-        text-align: center;
-        padding: 10px;
-        background: #ff9999;
-    }
-
-    #wrap {
-        text-align: center;
-    }
-
-    #text {
-        margin-bottom: 20px;
-    }
-
-    #code {
-        font-family: 'Courier New', monospace;
-        font-size: 20px;
-    }
-
-    #clock-box {
-        font-family: Arial, sans-serif;
-        font-size: 18px;
-    }
-
-    #canvas {
-        max-width: 100%;
-        height: auto;
-    }
-
-    @media screen and (max-width: 768px) {
-        #code {
-            font-size: 14px;
-        }
-    }
-
-    @media screen and (max-width: 480px) {
-        #code {
-            font-size: 12px;
-        }
-
-        #clock-box {
-            font-size: 16px;
-        }
-    }
-    </style>
+        <div class="menu w-full lg:block flex-grow lg:flex lg:items-center lg:w-auto lg:px-3 px-8">
+            <div class="flex ">
+                <div class="text-md font-bold text-blue-700 lg:flex-grow">
+                    <a href="index.html"
+                       class="block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-blue-700 mr-2">
+                        For you
+                    </a>
+                    <a href="./gallery/index.html"
+                       class=" block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-blue-700 mr-2">
+                        special moments 
+                    </a>
+                </div>
+          </div>
+        </div>
+    
+    </nav>
 </body>
+
+<body> 
+    <!-- Your Navbar HTML -->
+    <header class="heading">
+        <h1>Our Love Story Timeline ❤️</h1>
+    </header>
+
+    <!-- Love Story Timeline -->
+    <div class="timeline">
+        <div class="event">
+            <h2>First Meeting</h2>
+            <p>We met for the first time and instantly felt a connection. Little did we know, it was the beginning of something magical.</p>
+        </div>
+
+        <div class="event">
+            <h2>First Date</h2>
+            <p>Our first official date was filled with laughter, shared stories, and a feeling that we've known each other forever.</p>
+        </div>
+
+        <div class="event">
+            <h2>Officially Together</h2>
+            <p>We decided to make it official and become a couple. It was a day filled with joy and the promise of a beautiful journey ahead.</p>
+        </div>
+
+        <!-- Add more events as needed -->
+    </div>
+         <!-- Footer -->
+     <footer>
+        <p>Created with love by [Your Name]</p>
+    </footer>
+</body>
+
 </html>
